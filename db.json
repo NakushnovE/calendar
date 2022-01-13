@@ -1,0 +1,24 @@
+{
+  "events": [
+    {
+      "nameEvent": "Meeting",
+      "selectedTime": "8:00",
+      "participants": [
+        "Chupakabra",
+        "Leshii"
+      ],
+      "descriptionEvent": "some text",
+      "id": 1
+    },
+    {
+      "nameEvent": "Party",
+      "selectedTime": "12:30",
+      "participants": [
+        "Putin",
+        "Navalnii"
+      ],
+      "descriptionEvent": "Fight",
+      "id": 2
+    }
+  ]
+}

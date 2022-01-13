@@ -1,0 +1,60 @@
+.modal {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.4);
+    position: fixed;
+    top: 0;
+    left:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    position: relative;
+    height: 350px;
+    width: 300px;
+    background-color: lightsteelblue;
+    border-radius: 12px;
+    display: flex;
+    padding: 10px;
+}
+.form-modal {
+    height: 100%;
+    width: 100%;
+}
+.tittle-modal {
+    text-align: center;
+}
+.note {
+    line-height: 1px;
+    margin-top: 10px;
+}
+.close-modal {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    border-radius: 12px;
+    border: 1px solid gray;
+    background-color: #c6cee1;
+    cursor: pointer;
+}
+.close-modal:active {
+    background-color: #fa4848;
+}
+.save-note {
+    width: 80px;
+    height: 30px;
+    border-radius: 8px;
+    border: 1px solid #475e39;
+    background-color: #83e383;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    cursor: pointer;
+}
+.save-note:active {
+    background-color: #6cd26c;
+}
+.participants-note {
+    display: flex;
+}
