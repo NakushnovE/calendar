@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './ModalAddTask.css'
 
 
-const ModalAddTask = ({setClickedOpenModal, selectedDate, setEvents}:any | string) => {
+const ModalAddTask = ({setClickedOpenModal, selectedDate}:any | string) => {
 
     const timeZone = ["7:00","7:30","8:00","8:30","9:00","8:30","10:00","10:30","11:00","11:30","12:00","12:30"]
 
@@ -18,7 +18,9 @@ const ModalAddTask = ({setClickedOpenModal, selectedDate, setEvents}:any | strin
         setParticipants([...participants, inputParticipants])
         setInputParticipants("")
     }
+console.log(selectedDate)
  const event = {
+     selectedDate,
      nameEvent,
      selectedTime,
      participants,
@@ -38,7 +40,6 @@ const ModalAddTask = ({setClickedOpenModal, selectedDate, setEvents}:any | strin
             .then(res => {
                 console.log(res)
             })
-        setEvents()
         setClickedOpenModal(false)
     }
 

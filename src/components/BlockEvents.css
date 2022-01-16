@@ -10,3 +10,8 @@
     border-bottom: 1px solid grey;
     border-top: 1px solid grey;
 }
+.events-block {
+    height: 803px;
+    overflow-y: scroll;
+    
+}

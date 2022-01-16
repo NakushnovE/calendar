@@ -6,22 +6,24 @@ import {Dates} from "../configs/types";
 
 
 
-export const Calendar: React.FC<{} | any | boolean> = ({openModalAddTask}) => {
+export const Calendar: React.FC<{} | any | boolean> = ({openModalAddTask, getSelectedDate}) => {
 
     const [dayOfMonth, setDayOfMonth] = useState<any>(new Date())
     const [selectedDate, setSelectedDate] = useState<null | any>(0)
 
+
     const handleSelectedDate = (e: any) => {
         setSelectedDate(formattedDate(e))
+
     }
+    getSelectedDate(selectedDate)
     const formattedDate = (date: any) => {
-        const formatted: string = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`
+        const formatted: string = `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`
         return formatted
     }
 
     const today = new Date()
     const monthIndex = dayOfMonth.getMonth()
-
 
     const handlePrevMonth = () =>  {
         setDayOfMonth(() => new Date(dayOfMonth.getFullYear(), dayOfMonth.getMonth() - 1, 1))
@@ -42,14 +44,6 @@ export const Calendar: React.FC<{} | any | boolean> = ({openModalAddTask}) => {
         return monthDividedWeek;
     }
      const weekOfMonth: Dates[] | any = generateWeeks(mo)
-
-
-  /*  const [clickedOpenModal, setClickedOpenModal] = useState<boolean | any>(false)
-    const openModalAddTask = () => {
-        setClickedOpenModal(true)
-    }
-    console.log(clickedOpenModal)*/
-
 
 
     console.log(selectedDate)
@@ -92,3 +86,4 @@ export const Calendar: React.FC<{} | any | boolean> = ({openModalAddTask}) => {
 };
 
 export default Calendar;
+

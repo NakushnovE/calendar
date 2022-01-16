@@ -12,21 +12,22 @@ const [events, setEvents] = useState([])
             .then(res => setEvents(res))
     }, [])
 
-console.log(events)
+
 
     return (
-        <div className="notes-container">
+        <div className="event-container">
             <p className="tittle-events">EVENTS</p>
-            <div>
-                {events.map(({nameEvent, selectedTime, participants, descriptionEvent}) => (
+            <div className="events-block">
+                {events.map(({nameEvent, selectedTime, participants, descriptionEvent, selectedDate}) => (
                     <div className="event-item">
-                        <p>{nameEvent} в {selectedTime}</p>
-                        <div>Участники: {participants}</div>
-                        <div>Описание: {descriptionEvent}</div>
+                        <p><b>{selectedDate}</b></p>
+                        <p><b>{nameEvent}</b></p>
+                        <div><b>Время:</b> {selectedTime}</div>
+                        <div><b>Участники:</b> {participants}</div>
+                        <div><b>Описание:</b> {descriptionEvent}</div>
                     </div>
                     )
                 )}
-
             </div>
         </div>
     );

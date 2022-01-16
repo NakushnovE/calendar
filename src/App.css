@@ -68,8 +68,9 @@ td {
   border: 0;
   background: transparent;
 }
-.notes-container {
-  width: 300px;
+.event-container {
+  width: 400px;
+  height: 866px;
   margin: 10px 10px 10px 2px;
   background-color: rgb(84, 89, 89);
   position: relative;

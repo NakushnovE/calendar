@@ -19,6 +19,42 @@
       ],
       "descriptionEvent": "Fight",
       "id": 2
+    },
+    {
+      "selectedDate": "2022-1-13",
+      "nameEvent": "new",
+      "selectedTime": "12:30",
+      "participants": [
+        "Deqw"
+      ],
+      "descriptionEvent": "Я пытаюсь отправить данные из дочернего компонента родительскому компоненту следующим образом",
+      "id": 3
+    },
+    {
+      "selectedDate": "2022-1-13",
+      "nameEvent": "sdfdsfsdfd",
+      "selectedTime": "",
+      "participants": [],
+      "descriptionEvent": "sdfdsf",
+      "id": 4
+    },
+    {
+      "selectedDate": "2022-1-14",
+      "nameEvent": "Qwcdc",
+      "selectedTime": "",
+      "participants": [],
+      "descriptionEvent": "sdfdssddfffffffffffffffffffd\nsfdds\nfdsf\ndfsd\nfsdfsdffdsfs",
+      "id": 5
+    },
+    {
+      "selectedDate": "2022-1-27",
+      "nameEvent": "Asdfsdfsd",
+      "selectedTime": "",
+      "participants": [
+        "dfsdfc "
+      ],
+      "descriptionEvent": "sdfsdfsdfsdf",
+      "id": 6
     }
   ]
 }
