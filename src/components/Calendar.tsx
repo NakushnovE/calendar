@@ -14,14 +14,20 @@ export const Calendar: React.FC<{} | any | boolean> = ({openModalAddTask, getSel
 
     const handleSelectedDate = (e: any) => {
         setSelectedDate(formattedDate(e))
-
     }
+
+    const addZeroDate = (num: number) => {
+       return  num < 10? "0" + num: num
+    }
+
     getSelectedDate(selectedDate)
-    const formattedDate = (date: any) => {
-        const formatted: string = `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`
+    const formattedDate = (date: any | number | string) => {
+
+        const formatted: string = `${addZeroDate(date.getMonth() + 1)}.${addZeroDate(date.getDate())}.${date.getFullYear()}`
+
         return formatted
     }
-
+    console.log(selectedDate)
     const today = new Date()
     const monthIndex = dayOfMonth.getMonth()
 
@@ -46,7 +52,7 @@ export const Calendar: React.FC<{} | any | boolean> = ({openModalAddTask, getSel
      const weekOfMonth: Dates[] | any = generateWeeks(mo)
 
 
-    console.log(selectedDate)
+
     return (
         <div className="calendar-container">
             <div className="selection-month">

@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import {DataPicker} from "./components/DataPicker";
+import {DatePicker} from "./components/DatePicker";
 
 
 function App() {
   return (
       <>
-        <DataPicker />
+        <DatePicker />
 
       </>
 

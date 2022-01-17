@@ -9,7 +9,7 @@ const ModalAddTask = ({setClickedOpenModal, selectedDate}:any | string) => {
 
     const [nameEvent, setNameEvent] = useState("")
     const [descriptionEvent, setDescriptionEvent] = useState("")
-    const [selectedTime,setSelectedTime] = useState("")
+    const [selectedTime,setSelectedTime] = useState("7:00")
     const [inputParticipants, setInputParticipants] = useState("")
     const [participants, setParticipants] = useState<any>([])
 

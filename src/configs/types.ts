@@ -15,3 +15,11 @@ export interface Modal {
 export interface IOp {
     type: string
 }
+export  interface IEvents {
+    selectedDate: string,
+    nameEvent: string,
+    selectedTime: string,
+    participants: Array<string>,
+    descriptionEvent: string,
+    id: number
+}

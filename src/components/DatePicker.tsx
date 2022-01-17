@@ -5,7 +5,7 @@ import ModalAddTask from "./ModalAddTask";
 
 
 
-export const DataPicker: React.FC<boolean | any> = () => {
+export const DatePicker: React.FC<boolean | any> = () => {
 
     const [clickedOpenModal, setClickedOpenModal] = useState<boolean | any>(false)
     const [selectedDate, setSelectedDate] = useState<null | any>(0)

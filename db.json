@@ -1,6 +1,7 @@
 {
   "events": [
     {
+      "selectedDate": "01.01.2022",
       "nameEvent": "Meeting",
       "selectedTime": "8:00",
       "participants": [
@@ -11,6 +12,7 @@
       "id": 1
     },
     {
+      "selectedDate": "13.01.2022",
       "nameEvent": "Party",
       "selectedTime": "12:30",
       "participants": [
@@ -21,7 +23,7 @@
       "id": 2
     },
     {
-      "selectedDate": "2022-1-13",
+      "selectedDate": "15.01.2022",
       "nameEvent": "new",
       "selectedTime": "12:30",
       "participants": [
@@ -31,30 +33,14 @@
       "id": 3
     },
     {
-      "selectedDate": "2022-1-13",
-      "nameEvent": "sdfdsfsdfd",
-      "selectedTime": "",
-      "participants": [],
-      "descriptionEvent": "sdfdsf",
-      "id": 4
-    },
-    {
-      "selectedDate": "2022-1-14",
-      "nameEvent": "Qwcdc",
-      "selectedTime": "",
-      "participants": [],
-      "descriptionEvent": "sdfdssddfffffffffffffffffffd\nsfdds\nfdsf\ndfsd\nfsdfsdffdsfs",
-      "id": 5
-    },
-    {
-      "selectedDate": "2022-1-27",
-      "nameEvent": "Asdfsdfsd",
-      "selectedTime": "",
+      "selectedDate": "01.13.2022",
+      "nameEvent": "Qsw",
+      "selectedTime": "7:00",
       "participants": [
-        "dfsdfc "
+        "asas"
       ],
-      "descriptionEvent": "sdfsdfsdfsdf",
-      "id": 6
+      "descriptionEvent": "asdsadsad",
+      "id": 4
     }
   ]
 }
