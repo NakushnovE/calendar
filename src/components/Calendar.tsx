@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {getDatesOfMonth, Months, Weekdays} from "../configs/GeneratorDate";
 import {Dates} from "../configs/types";
+import useFetchEvents from "../hooks/useFetchEvents";
 
 
 
@@ -11,6 +12,8 @@ export const Calendar: React.FC<{} | any | boolean> = ({openModalAddTask, getSel
     const [dayOfMonth, setDayOfMonth] = useState<any>(new Date())
     const [selectedDate, setSelectedDate] = useState<null | any>(0)
 
+    const {events, fetchEvents} = useFetchEvents('http://localhost:5000/events')
+    console.log(events)
 
     const handleSelectedDate = (e: any) => {
         setSelectedDate(formattedDate(e))

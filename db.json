@@ -34,12 +34,10 @@
     },
     {
       "selectedDate": "01.13.2022",
-      "nameEvent": "Qsw",
+      "nameEvent": "AAAAAAAAAAA",
       "selectedTime": "7:00",
-      "participants": [
-        "asas"
-      ],
-      "descriptionEvent": "asdsadsad",
+      "participants": [],
+      "descriptionEvent": "",
       "id": 4
     }
   ]

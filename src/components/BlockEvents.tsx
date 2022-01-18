@@ -1,23 +1,16 @@
 import React, {useEffect, useState} from 'react';
 import "./BlockEvents.css"
 import {IEvents} from "../configs/types";
-import useGetEvents from "../hooks/useGetEvents";
+import useFetchEvents from "../hooks/useFetchEvents";
 
 
 const BlockEvents = () => {
 
-/*const [events, setEvents] = useState<any | string>([])
-
-    useEffect(() => {
-        fetch(`http://localhost:5000/events`)
-            .then(res => res.json())
-            .then(res => setEvents(res))
-    }, [])*/
 
     // @ts-ignore
-    const [events, setEvents] = useGetEvents<any | string>([])
+    const {events, fetchEvents} = useFetchEvents<any | string>('http://localhost:5000/events')
 console.log(events)
-
+  //  fetchEvents('http://localhost:5000/events')
     return (
         <div className="event-container">
             <p className="tittle-events">EVENTS</p>

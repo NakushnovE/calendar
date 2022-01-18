@@ -1,17 +1,19 @@
 import React, {useState} from 'react';
 import './ModalAddTask.css'
+import useFetchEvents from "../hooks/useFetchEvents";
 
 
 const ModalAddTask = ({setClickedOpenModal, selectedDate}:any | string) => {
 
     const timeZone = ["7:00","7:30","8:00","8:30","9:00","8:30","10:00","10:30","11:00","11:30","12:00","12:30"]
 
-
     const [nameEvent, setNameEvent] = useState("")
     const [descriptionEvent, setDescriptionEvent] = useState("")
     const [selectedTime,setSelectedTime] = useState("7:00")
     const [inputParticipants, setInputParticipants] = useState("")
     const [participants, setParticipants] = useState<any>([])
+
+    const {events, fetchEvents} = useFetchEvents('http://localhost:5000/events')
 
     const handleAddParticipants = (e:any) => {
         e.preventDefault();
