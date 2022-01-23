@@ -12,8 +12,6 @@ export const Calendar: React.FC<{} | any | boolean> = ({openModalAddTask, getSel
     const [dayOfMonth, setDayOfMonth] = useState<any>(new Date())
     const [selectedDate, setSelectedDate] = useState<null | any>(0)
 
-    const {events, fetchEvents} = useFetchEvents('http://localhost:5000/events')
-    console.log(events)
 
     const handleSelectedDate = (e: any) => {
         setSelectedDate(formattedDate(e))
@@ -30,7 +28,7 @@ export const Calendar: React.FC<{} | any | boolean> = ({openModalAddTask, getSel
 
         return formatted
     }
-    console.log(selectedDate)
+
     const today = new Date()
     const monthIndex = dayOfMonth.getMonth()
 

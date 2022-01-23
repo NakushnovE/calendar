@@ -23,22 +23,12 @@
       "id": 2
     },
     {
-      "selectedDate": "15.01.2022",
-      "nameEvent": "new",
-      "selectedTime": "12:30",
-      "participants": [
-        "Deqw"
-      ],
-      "descriptionEvent": "Я пытаюсь отправить данные из дочернего компонента родительскому компоненту следующим образом",
-      "id": 3
-    },
-    {
-      "selectedDate": "01.13.2022",
-      "nameEvent": "AAAAAAAAAAA",
+      "selectedDate": "01.20.2022",
+      "nameEvent": "qqq",
       "selectedTime": "7:00",
       "participants": [],
       "descriptionEvent": "",
-      "id": 4
+      "id": 3
     }
   ]
 }

@@ -1,9 +1,7 @@
 import React, {useState} from 'react';
 import './ModalAddTask.css'
-import useFetchEvents from "../hooks/useFetchEvents";
 
-
-const ModalAddTask = ({setClickedOpenModal, selectedDate}:any | string) => {
+const ModalAddTask = ({setClickedOpenModal, selectedDate, setFetch}:any | string) => {
 
     const timeZone = ["7:00","7:30","8:00","8:30","9:00","8:30","10:00","10:30","11:00","11:30","12:00","12:30"]
 
@@ -13,7 +11,6 @@ const ModalAddTask = ({setClickedOpenModal, selectedDate}:any | string) => {
     const [inputParticipants, setInputParticipants] = useState("")
     const [participants, setParticipants] = useState<any>([])
 
-    const {events, fetchEvents} = useFetchEvents('http://localhost:5000/events')
 
     const handleAddParticipants = (e:any) => {
         e.preventDefault();
@@ -42,7 +39,9 @@ console.log(selectedDate)
             .then(res => {
                 console.log(res)
             })
+
         setClickedOpenModal(false)
+        setFetch()
     }
 
 

@@ -1,28 +1,34 @@
-import {useEffect, useState} from 'react';
+import {useCallback, useEffect, useState} from 'react';
+import axios from "axios";
 
 
 const useFetchEvents = (url:any) => {
 
-    const [events, setEvents] = useState<any | string>([])
+    const [data, setData] = useState<any | string>([])
+    const [option, setOption] = useState({})
+    const [isLoading, setIsLoading] = useState<boolean>(false)
 
-    function fetchEvents(url:any) {
-        fetch(url)
-            .then(res => res.json())
-            .then(res => {
-                setEvents(res)
-            })
-    }
+
+    const setFetch:any = useCallback((option = {}) => {
+        setOption(option)
+        setIsLoading(true)
+    }, []);
+
 
     useEffect(() => {
-        if(url) {
-            fetchEvents(url)
+        if(!isLoading) {
+            return
         }
-    }, [])
-console.log(events)
+        const fetchData = async () => {
+            const res = await axios(url, option)
+            setData(res.data)
+            setIsLoading(false)
+        }
+        fetchData()
+        }, [isLoading, option, url])
 
 
-
-    return {events, fetchEvents}
+    return [{data, isLoading}, setFetch]
 };
 
 export default useFetchEvents;
