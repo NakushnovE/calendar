@@ -1,9 +1,6 @@
 import React, {useState} from 'react';
 import {getDatesOfMonth, Months, Weekdays} from "../configs/GeneratorDate";
 import {Dates} from "../configs/types";
-import useFetchEvents from "../hooks/useFetchEvents";
-
-
 
 
 

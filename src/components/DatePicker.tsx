@@ -18,18 +18,18 @@ export const DatePicker: React.FC<boolean | any | IEvents> = () => {
         setSelectedDate(selectedDate)
     }
 
-    const [{data, isLoading}, setFetch] = useFetchEvents('http://localhost:5000/events')
+    const [{events, isLoading}, setFetch] = useFetchEvents('http://localhost:5000/events')
 
     useEffect(() => {
         setFetch()
-        console.log(data)
+        console.log(events)
     },[setFetch])
 
 
     return (
         <div className="dataPicker-container">
             <Calendar openModalAddTask={openModalAddTask} getSelectedDate={getSelectedDate}/>
-            <BlockEvents events={data}/>
+            <BlockEvents events={events}/>
             {clickedOpenModal ? <ModalAddTask
                 setClickedOpenModal={setClickedOpenModal} selectedDate={selectedDate} setFetch={setFetch}/>: null}
         </div>

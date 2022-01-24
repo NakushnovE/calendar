@@ -4,7 +4,7 @@ import axios from "axios";
 
 const useFetchEvents = (url:any) => {
 
-    const [data, setData] = useState<any | string>([])
+    const [events, setEvents] = useState<any | string>([])
     const [option, setOption] = useState({})
     const [isLoading, setIsLoading] = useState<boolean>(false)
 
@@ -21,14 +21,14 @@ const useFetchEvents = (url:any) => {
         }
         const fetchData = async () => {
             const res = await axios(url, option)
-            setData(res.data)
+            setEvents(res.data)
             setIsLoading(false)
         }
         fetchData()
         }, [isLoading, option, url])
 
 
-    return [{data, isLoading}, setFetch]
+    return [{events, isLoading}, setFetch]
 };
 
 export default useFetchEvents;
