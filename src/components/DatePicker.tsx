@@ -24,7 +24,7 @@ export const DatePicker: React.FC<boolean | any | IEvents> = () => {
         setFetch()
         console.log(data)
     },[setFetch])
-    
+
 
     return (
         <div className="dataPicker-container">

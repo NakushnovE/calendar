@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import './ModalAddTask.css'
+import axios from "axios";
+import {stringify} from "querystring";
 
 const ModalAddTask = ({setClickedOpenModal, selectedDate, setFetch}:any | string) => {
 
@@ -18,24 +20,18 @@ const ModalAddTask = ({setClickedOpenModal, selectedDate, setFetch}:any | string
         setInputParticipants("")
     }
 console.log(selectedDate)
- const event = {
-     selectedDate,
-     nameEvent,
-     selectedTime,
-     participants,
-     descriptionEvent
- }
+
     const handleEventSave = (e:any) => {
         e.preventDefault()
 
-        fetch(`http://localhost:5000/events`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(event)
+        axios.post(`http://localhost:5000/events`, {
+            selectedDate,
+            nameEvent,
+            selectedTime,
+            participants,
+            descriptionEvent
         })
-            .then(res => res.json())
+            .then(res => res.data)
             .then(res => {
                 console.log(res)
             })
@@ -45,8 +41,6 @@ console.log(selectedDate)
     }
 
 
-
-    console.log(event)
     return (
         <div className="modal" onClick={() => setClickedOpenModal(false)}>
             <div className="modal-content" onClick={e => e.stopPropagation()}>
