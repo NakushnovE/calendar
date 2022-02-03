@@ -1,7 +1,7 @@
 {
   "events": [
     {
-      "selectedDate": "01.01.2022",
+      "dateOfEvent": 1641837816,
       "nameEvent": "Meeting",
       "selectedTime": "8:00",
       "participants": [
@@ -12,7 +12,7 @@
       "id": 1
     },
     {
-      "selectedDate": "13.01.2022",
+      "dateOfEvent": 1641837816,
       "nameEvent": "Party",
       "selectedTime": "12:30",
       "participants": [
@@ -21,6 +21,70 @@
       ],
       "descriptionEvent": "Fight",
       "id": 2
+    },
+    {
+      "dateOfEvent": 1645041600,
+      "nameEvent": "F",
+      "selectedTime": "7:00",
+      "participants": [],
+      "descriptionEvent": "",
+      "id": 3
+    },
+    {
+      "dateOfEvent": 1645041600,
+      "nameEvent": "qqqq",
+      "selectedTime": "7:00",
+      "participants": [],
+      "descriptionEvent": "qqq",
+      "id": 4
+    },
+    {
+      "dateOfEvent": 1645041600,
+      "nameEvent": "xvc",
+      "selectedTime": "7:00",
+      "participants": [],
+      "descriptionEvent": "cv",
+      "id": 5
+    },
+    {
+      "dateOfEvent": 1645041600,
+      "nameEvent": "sdsdsdsdsd",
+      "selectedTime": "7:00",
+      "participants": [],
+      "descriptionEvent": "",
+      "id": 6
+    },
+    {
+      "dateOfEvent": 1645473600,
+      "nameEvent": "cvcvcvc",
+      "selectedTime": "7:00",
+      "participants": [],
+      "descriptionEvent": "",
+      "id": 7
+    },
+    {
+      "dateOfEvent": 1645560000,
+      "nameEvent": "zzzzzz",
+      "selectedTime": "7:00",
+      "participants": [],
+      "descriptionEvent": "",
+      "id": 8
+    },
+    {
+      "dateOfEvent": 1645041600,
+      "nameEvent": "йцйц",
+      "selectedTime": "7:00",
+      "participants": [],
+      "descriptionEvent": "",
+      "id": 9
+    },
+    {
+      "dateOfEvent": 1647460800,
+      "nameEvent": "March",
+      "selectedTime": "7:00",
+      "participants": [],
+      "descriptionEvent": "o po po ",
+      "id": 10
     }
   ]
 }

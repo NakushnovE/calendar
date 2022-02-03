@@ -16,7 +16,7 @@ export interface IOp {
     type: string
 }
 export  interface IEvents {
-    selectedDate: string,
+    dateOfEvent: number | string,
     nameEvent: string,
     selectedTime: string,
     participants: Array<string>,

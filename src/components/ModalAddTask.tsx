@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import './ModalAddTask.css'
 import axios from "axios";
-import {stringify} from "querystring";
 
-const ModalAddTask = ({setClickedOpenModal, selectedDate, setFetch}:any | string) => {
+
+const ModalAddTask = ({setClickedOpenModal, dateOfEvent, setFetch, format}:any | string) => {
 
     const timeZone = ["7:00","7:30","8:00","8:30","9:00","8:30","10:00","10:30","11:00","11:30","12:00","12:30"]
 
@@ -19,13 +19,14 @@ const ModalAddTask = ({setClickedOpenModal, selectedDate, setFetch}:any | string
         setParticipants([...participants, inputParticipants])
         setInputParticipants("")
     }
-console.log(selectedDate)
+console.log(dateOfEvent)
 
+   // const dateOfEvent = selectedDay.getTime()
     const handleEventSave = (e:any) => {
         e.preventDefault()
 
         axios.post(`http://localhost:5000/events`, {
-            selectedDate,
+            dateOfEvent,
             nameEvent,
             selectedTime,
             participants,
@@ -40,13 +41,12 @@ console.log(selectedDate)
         setFetch()
     }
 
-
     return (
         <div className="modal" onClick={() => setClickedOpenModal(false)}>
             <div className="modal-content" onClick={e => e.stopPropagation()}>
                 <form className="form-modal">
                     <button className="close-modal" onClick={()=> setClickedOpenModal(false)}>X</button>
-                    <div className="tittle-modal">{selectedDate}</div>
+                    <div className="tittle-modal">{format(dateOfEvent)}</div>
                     <div className="name note">
                         <p>Name</p>
                         <input value={nameEvent} onChange={e => setNameEvent(e.target.value)} className=""></input>

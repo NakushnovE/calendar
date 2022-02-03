@@ -4,15 +4,15 @@ import {IEvents} from "../configs/types";
 
 
 
-const BlockEvents = ({events}:any) => {
-
+const BlockEvents = ({events, format}:any) => {
+    console.log(events)
     return (
         <div className="event-container">
             <p className="tittle-events">EVENTS</p>
             <div className="events-block">
                  {events.map((event: IEvents | any | undefined | null) => (
                     <div className="event-item">
-                        <p><b>{event.selectedDate}</b></p>
+                        <p><b>{format(event.dateOfEvent)}</b></p>
                         <p><b>{event.nameEvent}</b></p>
                         <div><b>Время:</b> {event.selectedTime}</div>
                         <div><b>Участники: </b>

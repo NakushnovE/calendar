@@ -1,42 +1,68 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {getDatesOfMonth, Months, Weekdays} from "../configs/GeneratorDate";
 import {Dates} from "../configs/types";
 
 
 
-export const Calendar: React.FC<{} | any | boolean> = ({openModalAddTask, getSelectedDate}) => {
+
+export const Calendar: React.FC<{} | any | boolean> = ({openModalAddTask, getSelectedDay, getDayFirst, getDayLast}) => {
 
     const [dayOfMonth, setDayOfMonth] = useState<any>(new Date())
     const [selectedDate, setSelectedDate] = useState<null | any>(0)
+    const [selectedDay, setSelectedDay] = useState<null | any>(0)
+    const [firstDay, setFirstDay] = useState<null | any>(0)
+    const [lastDay, setLastDay] = useState<null | any>(0)
+
+
 
 
     const handleSelectedDate = (e: any) => {
         setSelectedDate(formattedDate(e))
+        setSelectedDay(e)
     }
 
     const addZeroDate = (num: number) => {
        return  num < 10? "0" + num: num
     }
 
-    getSelectedDate(selectedDate)
+
+    getSelectedDay(selectedDay)
+
     const formattedDate = (date: any | number | string) => {
-
-        const formatted: string = `${addZeroDate(date.getMonth() + 1)}.${addZeroDate(date.getDate())}.${date.getFullYear()}`
-
+        const formatted: string = `${addZeroDate(date.getDate())}.${addZeroDate(date.getMonth() + 1)}.${date.getFullYear()}`
         return formatted
     }
+
 
     const today = new Date()
     const monthIndex = dayOfMonth.getMonth()
 
+    const blockOfDaysOfMonth: { d: Date; classes: string}[] = getDatesOfMonth(dayOfMonth)
+
     const handlePrevMonth = () =>  {
         setDayOfMonth(() => new Date(dayOfMonth.getFullYear(), dayOfMonth.getMonth() - 1, 1))
+
+        console.log(dayOfMonth)
     }
     const handleNextMonth = () =>  {
         setDayOfMonth(() => new Date(dayOfMonth.getFullYear(), dayOfMonth.getMonth() + 1, 1))
+
     }
 
-    const mo: { d: Date; classes: string}[] = getDatesOfMonth(dayOfMonth)
+ useEffect(() => {
+     setFirstDay(blockOfDaysOfMonth[0].d)
+     setLastDay(blockOfDaysOfMonth[blockOfDaysOfMonth.length-1].d)
+ }, [dayOfMonth])
+
+
+
+    //const first: any = blockOfDaysOfMonth[0].d
+    //const last:any = blockOfDaysOfMonth[blockOfDaysOfMonth.length-1].d
+
+
+
+    getDayFirst(firstDay)
+    getDayLast(lastDay)
 
 
     const generateWeeks = (obj: { d: Date; classes: string }[]) => {
@@ -47,7 +73,9 @@ export const Calendar: React.FC<{} | any | boolean> = ({openModalAddTask, getSel
         }
         return monthDividedWeek;
     }
-     const weekOfMonth: Dates[] | any = generateWeeks(mo)
+     const weekOfMonth: Dates[] | any = generateWeeks(blockOfDaysOfMonth)
+
+
 
 
 
