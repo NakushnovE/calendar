@@ -4,7 +4,7 @@ import BlockEvents from "./BlockEvents";
 import ModalAddTask from "./ModalAddTask";
 import useFetchEvents from "../hooks/useFetchEvents";
 import {IEvents} from "../configs/types";
-import {log} from "util";
+
 
 
 export const DatePicker: React.FC<boolean | any | IEvents> = () => {
